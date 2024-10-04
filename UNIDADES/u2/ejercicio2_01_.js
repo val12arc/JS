@@ -24,3 +24,5 @@ console.log(v5, typeof(v5));
 console.log(v6, typeof(v6));
 
 /*prueba de actualizacion*/
+
+
