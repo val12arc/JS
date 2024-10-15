@@ -55,7 +55,7 @@
         console.log(tresdim[1][0][1]);
 
         */
-
+        /*
         var vetor = [,1,2,3,4,5,6,7,8,9,0];
 
         for (let i = 0; i < vetor.length; i++) {
@@ -72,6 +72,81 @@
 
         console.table("filas: " + matriz.length);
         console.table("columnas: " + matriz[0].length);
+
+        
+        let array1 = [1,2,3];
+        let array2 = [4,5,6];
+        let nuevo = array2.concat(array1);
+        console.table(nuevo);
+        */
+
+        //COPIA DE ARRAYS
+        /*
+        let vec3 = [1,2,3, 4,5];
+        console.table(vec3);
+        let vec4 = vec3;
+        vec4[0] == 100
+
+        console.table(vec3);
+
+        
+        let dup_vec = vec3.slice();
+        console.table(dup_vec);
+        dup_vec[0] = 50;
+        console.log("DUPLICADO");
+        console.table(dup_vec);
+
+        console.log("ORIGINAL");
+        console.table(vec3);
+
+        let arrayOriginal = [1, 2, [3,4], {nombre : "Ana"}];
+        // let copia
+
+        let letras = ['f', 'h', 'Z'];
+        letras.sort();
+        console.table(letras);
+
+        let numeros = [10, 15, 5, 49, 0];
+        numeros.sort();
+        console.table(numeros);
+
+        numeros.reverse();
+        console.table(numeros);
+        */
+
+        //ej1: 
+
+        let B27 = [
+
+            ["F1C1", "F1C2", "F1C3", "F1C4", "F1C5", "F1C6", "F1C7"],
+            ["F2C1", "F2C2", "F2C3", "F2C4", "F2C5", "F2C6", "F2C7"],
+            ["F3C1", "F3C2", "F3C3", "F3C4", "F3C5", "F3C6", "F3C7"],
+            ["F4C1", "F4C2", "F4C3", "F4C4", "F4C5", "F4C6", "F4C7"]
+
+        ];
+
+        console.table(B27);
+
+        //ej2:
+
+        for (let i = 0; i < B27.length; i++) {
+            
+            console.table(B27[i]);
+            
+        }
+
+        //ej3:
+
+        let v = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+
+
+        
+
+
+
+
+
+    
 
 
 
