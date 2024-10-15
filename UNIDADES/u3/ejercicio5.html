@@ -14,19 +14,20 @@
             ["compañero", "partner"]
         ];
 
-        var mostrar= [];
+        var palabra = prompt("Introduce la palabra en español");
+        var cont = 0;
+        while (cont < 4){
 
-        var cont= 0;
+            if (traductor[cont][0] == palabra ){
+                console.log(traductor[cont][1]);
 
+            } else{
 
-        while (cont <4){
-            let 
-            var fila = [traductor[cont][cont], traductor[][(cont+1)]];
-            mostrar[cont]= fila;
+                console.log("no existe");
+            }
             cont++;
-        }
+        } 
 
-        console.table(mostrar)
     </script>
     
 </body>
