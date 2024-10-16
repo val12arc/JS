@@ -15,17 +15,23 @@
         ];
 
         var palabra = prompt("Introduce la palabra en español");
+
         var cont = 0;
-        while (cont < 4){
+
+        while (cont < traductor.length){
 
             if (traductor[cont][0] == palabra ){
+
                 console.log(traductor[cont][1]);
+                cont++;
 
             } else{
 
-                console.log("no existe");
+                console.log("no se encuentra la palabra");
+                cont ++;
+
             }
-            cont++;
+
         } 
 
     </script>
