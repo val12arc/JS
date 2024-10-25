@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const buscar =7;
+        const vector = [2,3,5,7,8,4,1];
+
+        let enc = false;
+        let pos = 0;
+
+        while((!enc) && (pos<vector.length)){
+            if (vector[pos] == buscar){
+                enc = true;
+            } else{
+                pos++;
+            }
+        }
+
+        if (enc){
+            for (let i = pos; i <(vector.length - 1); i++) vector[i+1];
+            vector.pop();
+
+        }else{
+            console.log("No encontrado");
+        }
+    </script>
+    
+</body>
+</html>

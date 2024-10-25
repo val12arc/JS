@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U3-Mapas</title>
+</head>
+<body>
+    <script>
+
+        //cuando declaramos una constante es porque no va a cambiar de valor durante la ejecución del programa.
+        //con datos primitivos u objetos. Con objetos va a tener una referencia a una posición de memoria. No se guarda un valor, si no una referencia.
+        //funciona igual con un let o const pero hay una diferencia simbólica. La variable declarada con const siempre apuntará al objeto.
+
+        
+
+        
+        const miMapa2 = new Map([["nombre", "Marcos"], ["apellido1", "López"], ["apellido2", "Abad"], ["edad", 20]]);
+
+        console.log(miMapa2);
+        console.table(miMapa2);
+
+
+
+        const miMapa = new Map();
+
+        miMapa.set('nombre','Miguel');
+        miMapa.set('apellido1', 'Barbol');
+        miMapa.set('apellido2', 'Casanova');
+        miMapa.set('edad', 23);
+
+        console.log(miMapa);
+        console.table(miMapa);
+
+        console.log("Datos del alumno:");
+        console.log(miMapa.get('nombre'));
+
+        if (miMapa.has('apellido1')){
+            console.log(`El apellido es ${miMapa.get('apellido1')}`)
+        }
+
+        if (miMapa.has('edad')){
+            console.log(`La edad es ${miMapa.get('edad')}`);
+        } else{
+            console.log("No existe la clave edad.");
+        }
+
+        console.log(`El mapa tiene ${miMapa.size}`)
+
+        for (let clave of miMapa2.keys){
+            console.log(clave)
+        }
+
+        const libro1 = [['titulo', 'El señor de los anillos'], 
+                        ['autor', '']]
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
