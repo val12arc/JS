@@ -10,6 +10,8 @@
         const buscar =7;
         const vector = [2,3,5,7,8,4,1];
 
+        //busco si existe
+
         let enc = false;
         let pos = 0;
 
@@ -21,13 +23,17 @@
             }
         }
 
+        //2 elimino si procede
+
         if (enc){
-            for (let i = pos; i <(vector.length - 1); i++) vector[i+1];
+            for (let i = pos; i <(vector.length - 1); i++) vector[i] = vector[i+1];
             vector.pop();
 
         }else{
             console.log("No encontrado");
         }
+        console.table(vector);
+        
     </script>
     
 </body>
