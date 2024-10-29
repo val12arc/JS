@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const modulos2daw = new Map([
+            ['dwes', 'Desarrollo Web Entorno Servidor'],
+            ['dwec', 'Desarrollo web Entorno Cliente'],
+            ['daw', 'Despliegue de Aplicaciones Web'],
+            ['intf', 'Interfaces'],
+            ['ing', 'Ingles'],
+            ['eie', 'Empresa e Iniciativa Emprendedora']
+            ]);
+
+        console.log('Hay en total ' + modulos2daw.size + ' módulos almacenados');
+
+        for (const [clave, valor] of modulos2daw) {
+            console.log("La clave es " + clave + " y el valor es " + valor);
+        }
+
+        if(modulos2daw.has('dwec')){
+            console.log(modulos2daw.get('dwec'));
+        }
+
+        for (const clave of modulos2daw.keys() ) {
+            console.log(clave);
+        }
+
+        for (const [clave,valor] of modulos2daw) {
+            console.log(valor);
+        }
+
+
+        
+    </script>
+    
+</body>
+</html>

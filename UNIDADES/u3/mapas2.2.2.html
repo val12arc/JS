@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const personas = new Map;
+        personas.set('Sara', 20);
+        personas.set('Juan', 14);
+        personas.set('Pedro', 23);
+ 
+        personas.set('Sara', 13);
+        personas.delete('Juan');
+        
+        for (const [key, value] of personas) {
+            console.log(key + " tiene " + value + " años ");
+        }
+        
+        let busc = 23;
+
+        for (const [key,value] of personas) {
+
+            if (value == busc){
+                personas.delete(key);
+            }
+
+        }
+
+        console.log(personas);
+
+        personas.clear();
+        console.log(personas);
+
+        
+
+    </script>
+    
+</body>
+</html>
