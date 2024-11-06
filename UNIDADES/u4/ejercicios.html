@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //funciones por definición y por declaración son sinonimos. hoising: la podemos utilizar antes de haber sido declarada.
+
+        
+        
+        function calcularAreaCirculo (radio){
+            return Math.PI * radio * radio;
+        }
+
+        //funciones por expresión, carecen de hoising . Se define como parte de la asignación de una variable.
+
+        const cuadrado = function funCuadrado(n){
+            return n*n;
+        };
+
+        const calcularPerimetroRectangulo = function(base,altura) {
+            return 2 * (base + altura);
+
+        };
+
+        console.log(calcularPerimetroRectangulo(5,10));
+
+        const elevadoA = function miFuncion(numero) {
+            const n = 10;
+            callback(n);
+        }
+
+
+
+
+
+        function calcularPrecioFinal (precio, descuento){
+            return moni * 0.9;
+        }
+
+        const aplicarDescuento10 = function apli (precio, callback) {
+            return callback(precio);
+        }
+            
+        
+
+    </script>
+</body>
+</html>
