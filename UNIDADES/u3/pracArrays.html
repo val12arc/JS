@@ -7,16 +7,58 @@
 </head>
 <body>
     <script>
-        var $mesesLlovidos = [
+        const meses = [
             [1,2,3,4,5,6,7,8],
-            [true, false, false, true, false, ,true, false,true],
-            [200.5,   ,    ,  300,   , 150.2,   , 500.9]
-        ]
+            [true, false,false,true,false, ,true, false,true],
+            [200.5,undefined,undefined,300,undefined, 150.2,undefined, 500.9]
+        ];
 
-        for (let i = 0; i < $mesesLlovidos.length; i++) {
-            console_table($mesesLlovidos[$i])
+        let mesesLlovidos = 0;
+
+        let totalAgua = 0;
+
+        for (let i = 0; i < meses[1].length; i++) {
+
+            if(meses[1][i] === true){
+
+                mesesLlovidos++;
+
+            }
+
+        }
+
+        for (let i = 0; i < meses[2].length; i++) {
+
+            if (typeof meses[2][i] === 'number'){
+
+                totalAgua += meses[2][i];
+
+            }
             
         }
+
+
+
+        let mesesNoLlovidos = "Los meses que no ha llovid son : ";
+        for (let i = 0; i < meses[1].length; i++) {
+            if (meses[1][i]=== false) {
+                mesesNoLlovidos += ` - ${meses[0][i]}`;
+            }
+            
+        }
+
+
+        console.log('En total han llovido ' + mesesLlovidos + ' meses.');
+        console.log('En total han caído ' + totalAgua + ' litros por metro cuadrado.');
+        console.log(mesesNoLlovidos);
+        
+        
+
+        
+
+
+
+
     </script>
     
 </body>
