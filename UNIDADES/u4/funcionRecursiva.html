@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nVeces (num,cont){
+            if (cont==0){
+
+                return 0;
+            }else{
+                return num+nVeces(num,cont-1);
+            }
+
+        }
+
+        console.log(nVeces(2,3));
+
+        function potencia (base, exponente){
+            if (exponente == 0){
+                return 1;
+            } else{
+                return base*potencia(base,exponente-1);
+            }
+        }  
+        console.log(potencia(2,3));
+
+        /* Escribe una función llamada celsiusAFahrenheit que reciba un valor en 
+        grados Celsius y lo convierta a grados Fahrenheit. La fórmula para la conversión es (celsius*9/5) + 32*/
+
+        function celsiusAFahrenheit (gradosC){
+            return (gradosC*(9/5))+32;
+        }
+        console.log(celsiusAFahrenheit(30));
+
+        const cAf = function(gradosC){
+            return (gradosC*(9/5))+32;
+        }
+
+        console.log(cAf(11));
+
+        const fact = function calcularFactorial(n){
+
+            factorial = 1;
+
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+                
+            }
+
+            return factorial;
+        }
+
+        console.log(fact(40));
+    </script>
+</body>
+</html>
