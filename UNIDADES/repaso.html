@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        function diferencia(c1,c2){
+            const conjunto = new Set();
+
+            for (const elemento of c1) {
+                if(!(c2.has(elemento))){
+                    conjunto.add(elemento);
+                }
+                
+            }
+            return conjunto;
+        }
+
+        const c1 = new Set([1,4,7,9]);
+        const c2 = new Set([2,7,10,11]);
+
+        console.log(diferencia(c1,c2));
+        */
+
+        function elimPorValor(map, value) {
+
+            let cont=0;
+
+            for (const [clave, valor] of map) {
+                
+                if (valor === value){
+
+                    map.delete(clave);
+                    cont++;
+
+                }
+            }
+            return cont;
+            
+        }
+
+        let array= [1,2,3];
+        let arrayNuevo=array.slice()
+
+        const mapita = new Map([
+            ["uno", 1],
+            ["dos", 1],
+            ["tres, 3"],
+            ["cuatro", 1]
+        ])
+
+        console.log(elimPorValor(mapita,1));
+        console.log(mapita);
+
+
+    </script>
+    
+</body>
+</html>
