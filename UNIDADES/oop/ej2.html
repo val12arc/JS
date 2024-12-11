@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Telefono {
+            cpu = "Intel";
+            ram = "8GB";
+            almacenamiento = "128GB";
+            ancho = "500px";
+            alto = "500px";
+            numCamaras = 2;
+
+            constructor(cpu,ram,almacenamiento,ancho, alto, numCamaras){
+                this.cpu = cpu;
+                this.ram = ram;
+                this.almacenamiento=almacenamiento;
+                this.ancho=ancho;
+                this.alto=alto;
+                this.numCamaras=numCamaras;
+            }
+
+            toString(){
+                console.log(
+                    "CPU: " + this.cpu + " RAM: " + this.ram + " ALMACENAMIENTO: "
+                    + this.almacenamiento + " ANCHO: " + this.ancho + " ALTO: " + this.alto + 
+                    " Nº CAMS: " + this.numCamaras
+                );
+            }
+        
+        }
+
+        const tlf1 = new Telefono("intel", "8gb", "128gb", "500px", "550px", 4);
+        tlf1.toString();
+
+        const tlf2 = new Telefono("marca2", "4gb", "43242gb", "600px", "570px", 3);
+        tlf2.toString();
+
+        const tlf3 = new Telefono("marca3", "10gb", "12228gb", "800px", "500px", 2);
+        tlf3.toString();
+
+        const tlf4 = new Telefono("marca4", "2gb", "1228gb", "700px", "550px", 2);
+        tlf4.toString();
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* const fecha01= new Date();
+        console.log(fecha01.getDate() + "/" + (fecha01.getMonth()+1) + "/" + fecha01.getFullYear());
+
+        fecha01.setFullYear(2000);
+        console.log("AÑo modificado->" + fecha01.getDate() + "/" + (fecha01.getMonth()+1)+ "/"+fecha01.getFullYear()); */
+
+        //crear funcion que reciba año mes y día y devuelva día de la semana en que naciste
+
+        function diaMiCum (dia, mes, ano){
+
+            const cumple= new Date(ano,mes-1,dia);
+
+            switch (cumple.getDay()) {
+                case 0:
+                    return "Domingo";
+                case 1:
+                    return "Lunes";
+                case 2:
+                    return "Martes";
+                case 3: 
+                    return "Miercoles";
+                case 4:
+                    return "Jueves";
+                case 5:
+                    return "Viernes";
+                case 6:
+                    return "Sabado";
+               
+            }
+
+        }
+
+        console.log(diaMiCum(12,4,2005));
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Crea un programa que obtenga la fecha y hora actuales y las muestre en el formato:
+        //Día/Mes/Año Hora:Minuto:Segundo
+
+        const fechaHoy = new Date();
+        console.log(fechaHoy.getDate() + "/" + (fechaHoy.getMonth()+1) + "/" + fechaHoy.getFullYear() +
+        "  "+ fechaHoy.getHours()+":"+fechaHoy.getMinutes()+":"+fechaHoy.getSeconds());
+
+        //Escribe una función que reciba una fecha en formato AAAA-MM-DD y devuelva el día de
+        //la semana correspondiente
+
+        function diaSemana (fecha){
+
+            const date = new Date(fecha);
+
+            const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+            return diasSemana[date.getDay()];
+
+        }
+
+        console.log(diaSemana("2024-12-11"));
+
+
+        //Crea un programa que calcule cuántos días hay entre dos fechas dadas en formato AAAA-MM-DD.
+
+        function diferenciaEntreFechas(fecha1, fecha2) {
+
+            const date1 = new Date (fecha1);
+            const date2 = new Date (fecha2);
+
+            const diferencia = (date1.getMilliseconds()- date2.getMilliseconds())/86400000;
+
+            return diferencia;
+        }
+
+
+        console.log(diferenciaEntreFechas("2024-12-11", "2024-12-01"));
+
+
+
+
+
+
+    </script>
+</body>
+</html>

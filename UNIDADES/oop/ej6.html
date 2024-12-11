@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Viaje (origen,destino, dias, precio, mostrar){
+            this.origen=origen;
+            this.destino=destino;
+            this.dias=dias;
+            this.precio=precio;
+            this.mostrar = function(){
+                console.log(`${this.origen}/${this.destino}`);
+                console.log(`durante ${this.dias} dias: EUR$ ${this.precio}`);
+            };
+        }
+
+        const viaje1 = new Viaje("Zaragoza", "Líbano", 7, 120);
+
+        console.log("---------");
+        console.log(viaje1);
+        console.log(viaje1.__proto__);
+        console.log(viaje1.__proto__.__proto__);
+
+
+    </script>
+    
+</body>
+</html>
