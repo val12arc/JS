@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcularHipotenusa(a, b){
+            res = Math.pow(a,2) + Math.pow(b,2);
+
+            c = Math.sqrt(res);
+
+            return c;
+        }
+
+        const c1 = 3;
+        const c2 = 4;
+        console.log(calcularHipotenusa(c1, c2));
+
+        function redondear(n){
+            Math.round(n);
+        }
+
+        function numeroAleatorioEnRango(min, max){
+
+        }
+
+        function calcularAreaCirculo(r){
+            area = Math.PI * Math.pow(r,2);
+
+            return area;
+        }
+
+        console.log(calcularAreaCirculo(4));
+        
+        function convertirGradosAradianes(ang){
+            radianes = (ang * Math.PI)/180;
+            return radianes;
+        }
+
+        function encontrarMaximo (array){
+            Math.max(...array);
+        }
+
+        function encontrarMinimo(array){
+            Math.min(...array);
+        }
+
+        function calcularLongitudCircunferencia(r){
+            longitud=2*Math.PI*r;
+            return longitud;
+        }
+
+        function aproximareXP(x) {
+           Math.exp(x); 
+        }
+
+        function convertirRadianesAgrados(rad){
+            grados = rad * (180/Math.PI);
+            return grados;
+        }
+
+        function aleatorioTruncado(){
+            
+        }
+
+        function numeroImparAleatorio(min, max) {
+            impares = [];
+            for (let i = min; i <=max; i++) {
+                if (i%2!=0){
+                    impares[i];
+                }    
+            }
+            
+        }
+        </script>
+    
+</body>
+</html>

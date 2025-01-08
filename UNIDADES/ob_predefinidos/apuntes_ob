@@ -1,0 +1,7 @@
+MODIFICADORES
+
+[abc] coincide con a,b o c
+[a-z] coincide con cualquier letra minuscula
+[A-Z] coincide con cualquier letra mayuscula
+[0-9] coincide con cualquier dígito
+[^abc] niega el conjunto (no a,b o c)
