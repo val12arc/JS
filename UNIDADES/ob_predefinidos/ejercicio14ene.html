@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona{
+            #nombre;
+            #edad;
+
+            constructor(nombre, edad){
+                this.#nombre=nombre;
+                this.#edad =edad;
+            }
+
+            getNombre(){
+                return this.#nombre;
+            }
+            setNombre(nombre){
+                return this.#nombre=nombre;
+            }
+
+            getEdad(){
+                return this.#edad;
+            }
+
+            setEdad(edad){
+                return this.#edad=edad;
+            }
+
+            saludar() {
+                return `Hola, mi nombre es ${this.#nombre} y tengo ${this.#edad} años.`;
+            }
+
+        }
+
+
+        const persona = new Persona('Juan', 30);
+
+        console.log(persona.saludar());
+
+        persona.setNombre('María');
+        persona.setEdad(25);
+
+        console.log(persona.saludar());
+    </script>
+</body>
+</html>
