@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // 1. Notación literal
+    const vehiculoNl = {
+        nombre: "Coche",
+        color: "Rojo",
+        describir() {
+            return `${this.nombre} de color ${this.color}.`;
+        }
+    };
+
+
+    // 2. Constructor new Object()
+    const vehiculoCnO = new Object();
+    vehiculoCnO.nombre = "Moto";
+    vehiculoCnO.color = "Azul";
+    vehiculoCnO.describir = function() {
+        return `${this.nombre} de color ${this.color}.`;
+    };
+
+
+    // 3. Función constructora
+    function vehiculoFc(nombre, color) {
+        this.nombre = nombre;
+        this.color = color;
+        this.describir = function() {
+            return `Este es un ${this.nombre} de color ${this.color}.`;
+        };
+    }
+    const vehiculoPorFuncion = new vehiculoFc("Camión", "Verde");
+
+
+    // 4. Clases ES6
+    class Vehiculo {
+        constructor(nombre, color) {
+            this.nombre = nombre;
+            this.color = color;
+        }
+        describir() {
+            return `Este es un ${this.nombre} de color ${this.color}.`;
+        }
+    }
+    const vehiculoES6 = new Vehiculo("Coche", "Negro");
+
+    // 5. Object.create
+    const VehiculoOc = {
+        describir() {
+            return `Este es un ${this.nombre} de color ${this.color}.`;
+        }
+    };
+
+    const vehiculo2 = Object.create(VehiculoOc);
+    vehiculo2.nombre = "Coche";
+    vehiculo2.color = "Blanco";
+
+    </script>
+</body>
+</html>
+
