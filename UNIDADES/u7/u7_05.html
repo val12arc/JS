@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Formularios
+    </h1>
+    <br>
+    <section>
+        <form id="formu1" action="formu1.php">
+            Nombre: <input id="nombre" type="text" name="nombre"><br>
+            Apellidos: <input type="text" name="apellidos"><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <br>
+
+    <section>
+        <form id="formu2" action="formu2.php">
+            Edad: <input id="nombre" type="text" name="edad"><br>
+            Email: <input type="email" name="email"><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <script>
+        const f2 = document.forms[0];
+        console.log(f2.action);
+
+        document.getElementById("nombre").addEventListener("click"), ()=>{
+            console.log("- GetAttribute " + document.getElementById("nombre").getAttribute("value"));
+            console.log("- Value " + document.getElementById("nombre").value);
+        };
+    </script>
+</body>
+</html>

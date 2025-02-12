@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            align-items: center;
+            width: 50%;
+        }
+        article{
+            border: 5px solid rgb(10, 1, 59);
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+        }
+        p{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+        <section id="seccion">
+
+            <article nombre="Pedro" edad="27" cargo="Secretario">
+
+                <p>Pedro</p>
+                <p>27</p>
+                <p>Secretario</p>
+    
+            </article>
+    
+            <article nombre="Juan" edad="30" cargo="Desarrollador">
+                <p>Juan</p>
+                <p>30</p>
+                <p>Desarrollador</p>
+    
+            </article>
+    
+            <article nombre="Marcos" edad="33" cargo="Trabajador">
+                <p>Marcos</p>
+                <p>33</p>
+                <p>Trabajador</p>
+    
+            </article>
+    
+        </section>
+
+        <script>
+
+            const seccion = document.getElementById("section");
+            seccion.addEventListener("click", (evt)=>{
+                let elemento = evt.target.closest("articles");
+                
+                //closest se usa para encontrar el elemento más cercano en el árbol
+            })
+
+            
+
+
+            /*document.querySelector(".container").addEventListener("click", (event) => {
+                if (event.target.closest("article")) {
+                    const article = event.target.closest("article");
+                    const nombre = article.getAttribute("nombre");
+                    const edad = article.getAttribute("edad");
+                    const cargo = article.getAttribute("cargo");
+                    console.log(`Empleado: ${nombre}, Edad: ${edad}, Cargo: ${cargo}`);
+                }
+            });
+            */
+        </script>
+    
+</body>
+</html>

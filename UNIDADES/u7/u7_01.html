@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="">
+    <h1>Eventos en JavaScript</h1>
+    <br/>
+    <p id="p1">Esto es un párrafo</p>
+    <br/>
+    <p id="p2">Esto es otro párrafo</p>
+    <br/>
+    <p id="p3">Y por último, un párrafo</p>
+    <script>
+        let contador = 0;
+        let p1=document.getElementById("p1");
+        p1.addEventListener("click",()=>{
+            contador++;
+            console.log("Contador: " + contador);
+        });
+
+        function hola(){
+            console.log("saludos, humanos");
+        }
+
+        let p2 = document.getElementById("p2");
+        p2.addEventListener("mouseover", hola);
+
+        let p3 = document.getElementById("p3");
+        p3.addEventListener("click", (evt)=>{
+            //console.log
+            console.table(evt);
+        });
+    </script>
+
+</body>
+</html>
