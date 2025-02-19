@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio20</title>
+</head>
+<body>
+    <p>Diseña una jerarquía de clases donde Música y Tecnología sean clases derivadas de Aula,
+        para modelar las instalaciones de un instituto de secundaria. Elige un metodo con el que evidenciar
+        el concepto del polimorfismo.
+    </p>
+    <script>
+        class Aula{
+            constructor(edificio, capacidad) {
+                this.edificio = edificio;
+                this.capacidad=capacidad;
+            }
+
+            usoAula(){
+                console.log("En esta aula se imparten clases");
+            }
+        }
+
+        class Musica extends Aula {
+            usoAula(){
+                console.log("En este aula se imparten clases de música");
+            }
+        }
+
+        class Tecnologia extends Aula {
+            usoAula(){
+                console.log("En este aula se imparten clases de tecnología");
+            }
+        }
+
+        let aula1 = new Musica();
+        let aula2 = new Tecnologia();
+
+        aula1.usoAula();
+        aula2.usoAula();
+        
+    </script>
+</body>
+</html>

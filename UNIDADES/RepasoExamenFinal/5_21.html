@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Construye un objeto partiendo de Object y modifícalo al vuelo para modelar una matriz.
+        Sus propiedades serán nFilas, nColumnas y contenido , y sus metodos inicializarMatriz(valor),
+        que rellena toda la matriz con el mismo valor, aleatoriaMatriz(), que rellena la matriz con enteros
+        aleatorios entre 1 y 100 , y verMatriz() que la muestra por consola.
+    </p>
+    <script>
+        let matriz = Object.create({
+            inicializarMatriz(valor){
+                this.contenido=[];
+                for (let i = 0; i < this.nFilas; i++) {
+                    this.contenido[i]=[];
+                    for (let j = 0; j < this.nColumnas; j++) {
+                        this.contenido[i][j] = valor;
+                    }
+                }   
+            },
+
+            aleatoriaMatriz(){
+                this.contenido=[];
+                for (let i = 0; i < this.nFilas; i++) {
+                    this.contenido[i] = [];
+                    for (let j = 0; j < this.nColumnas; j++) {
+                        this.contenido[i][j] = Math.floor(Math.random() * 100) + 1;
+                        
+                    }
+                    
+                }
+            },
+
+            verMatriz(){
+                console.table(this.contenido);
+            }
+        })
+
+        matriz.nFilas = 3;
+        matriz.nColumnas = 3;
+        matriz.inicializarMatriz(5);
+        matriz.verMatriz();
+        matriz.aleatoriaMatriz();
+        matriz.verMatriz();
+
+    </script>
+</body>
+</html>

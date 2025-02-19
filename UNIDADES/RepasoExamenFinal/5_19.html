@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio19</title>
+</head>
+<body>
+    <p> Escribe un programa con herencia de clases que permita modelar los objetos Telefono, Fijo
+         y Móvil, de manera que Teléfono sea la clase madre y Fijo y Móvil, clases derivadas.
+    </p>
+
+    <script>
+        class Telefono{
+            constructor(marca, modelo){
+                this.marca = marca;
+                this.modelo = modelo;
+            }
+
+            llamar(numero){
+                console.log(`Llamando a ${numero} desde un ${this.marca} ${this.modelo}`);            
+            }
+        }
+
+        class Fijo extends Telefono {
+            constructor(marca, modelo, tipo){
+                super(marca, modelo);
+                this.tipo= tipo; // inalambrico o de cable
+            }
+        }
+
+        class Movil extends Telefono{
+            constructor(marca,modelo,bateria){
+                super(marca,modelo);
+                this.bateria=bateria; //porcentaje de bateria
+            }
+        }
+
+        let miMovil = new Movil ("OPPO", "A74", 30);
+        miMovil.llamar("660786845");
+    </script>
+</body>
+</html>

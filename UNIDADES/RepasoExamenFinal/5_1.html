@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let usuario = {
+            nombre: "admin",
+            contra: "1234",
+
+            autenticar(name, pass){
+                if (name == this.nombre && pass == this.contra){
+                    alert("Autenticación exitosa. Bienvenido! " + this.nombre);
+                } else {
+                    alert("Autenticación fallida. Usuario o contraseña incorrectos");
+                }
+            }
+        }
+
+        let n = prompt("Ingresa tu nombre");
+        let c = prompt("Ingresa tu contraseña");
+
+        usuario.autenticar(n,c);
+
+
+    </script>
+</body>
+</html>

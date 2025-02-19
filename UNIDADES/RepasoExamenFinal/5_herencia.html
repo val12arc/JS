@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Producto{
+            constructor(nombre, precio){
+                this.nombre = nombre;
+                this.precio = precio;
+
+            }
+
+            mostrarDetalles() {
+                console.log(`El nombre del producto es ${this.nombre} y su precio ${this.precio}`);
+            }
+        }
+
+        class Libro extends Producto{
+            constructor(nombre, precio, autor){
+                super(nombre,precio);
+                this.autor = autor;
+            }
+            mostrarDetalles() {
+                console.log(`El nombre del producto es ${this.nombre} , su precio ${this.precio} y su autor es ${this.autor}`);
+            }
+        }
+
+        class Camiseta extends Producto{
+            constructor(nombre, precio, talla){
+                super(nombre,precio);
+                this.talla = talla;
+            }
+            mostrarDetalles() {
+                console.log(`El nombre del producto es ${this.nombre} , su precio ${this.precio} y su talla es ${this.talla}`);
+            }
+        }
+
+        class Videojuego extends Producto{
+            constructor(nombre, precio, genero){
+                super(nombre,precio);
+                this.genero = genero;
+            }
+            mostrarDetalles() {
+                console.log(`El nombre del producto es ${this.nombre} , su precio ${this.precio} y su genero es ${this.genero}`);
+            }
+        }
+
+        let libro1 = new Libro("libro", 17, "Lorca");
+        libro1.mostrarDetalles();
+        
+    </script>
+</body>
+</html>
