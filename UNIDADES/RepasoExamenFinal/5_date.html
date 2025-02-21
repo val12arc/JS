@@ -10,5 +10,147 @@
         let ahora = new Date();
         console.log(`${ahora.getDate()}/${ahora.getMonth() + 1}/${ahora.getFullYear()}  ${ahora.getHours()}:${ahora.getMinutes()}:${ahora.getSeconds()}`)
     </script>
+
+    <script>
+        let fecha = new Date("2025-04-12");
+        console.log(fecha.getDay());
+    </script>
+
+    <script>
+        function diferenciaFechas(f1,f2){
+            let fecha1 = new Date(f1);
+            let fecha2 = new Date(f2);    
+            diferencia = Math.abs(fecha2 - fecha1);
+
+            return Math.floor(diferencia/(1000 * 60 * 60 * 24));
+
+        }
+
+        console.log(diferenciaFechas("2024-12-31", new Date()));
+    </script>
+
+    <script>
+        function sumarDias(f, ndias) {
+            let nuevafecha = new Date(f);
+            nuevafecha.setDate(nuevafecha.getDate() + ndias);
+            return nuevafecha;
+        }
+        
+        console.log(sumarDias("2024-12-28", 3));
+
+    </script>
+    <script>
+        function validaFecha(fecha){
+            let f = new Date(fecha);
+            if(isNaN(f.getTime())){
+                console.log("fecha invalida");
+            } else{
+                console.log("fecha válida: " + f);
+            }
+        }
+
+        validaFecha("2024-12-3");
+        validaFecha("hola mundo");
+    </script>
+
+    <script>
+        function diferenciaHorasMinutos(fecha1, fecha2) {
+            let f1 = new Date(fecha1);
+            let f2 = new Date(fecha2);
+    
+            // Obtener la diferencia en minutos directamente
+            let diferenciaMinutos = Math.abs((f2 - f1) / (1000 * 60));
+
+            let horas = Math.floor(diferenciaMinutos / 60);
+            let minutos = diferenciaMinutos % 60;
+
+            return `${horas} horas y ${minutos} minutos`;
+        }
+
+        // 🔹 Pruebas
+        console.log(diferenciaHorasMinutos("2024-02-01T00:50:00", "2024-02-06"));
+        // "2 horas y 30 minutos"
+
+        console.log(diferenciaHorasMinutos("2024-02-01T10:45:00", "2024-02-01T14:15:00"));
+        // "3 horas y 30 minutos"
+
+        console.log(diferenciaHorasMinutos("2024-02-01T23:50:00", "2024-02-02T01:10:00"));
+        // "1 horas y 20 minutos"
+
+    </script>
+        
+    <script>
+        function esBisiesto(anio) {
+            if ((anio % 4 === 0 && anio % 100 !== 0) || (anio % 400 === 0)){
+                console.log(anio + " es un año bisiesto");
+            }else{
+                console.log(anio + " no es un año bisiesto")
+            }
+        }
+
+        esBisiesto(1900);
+        esBisiesto(2000);
+    </script>
+
+    <script>
+        function diasEnMes (mes, anio){
+            let diasPorMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if (mes === 2 && esBisiesto(anio)) {
+                return 29;
+            }
+
+            return diasPorMes[mes - 1];  // Restamos 1 porque los arrays empiezan en 0
+        }
+        console.log(diasEnMes(2, 2024));  // 29 (Febrero bisiesto)
+        console.log(diasEnMes(4, 2024));  // 30 (Abril)
+        console.log(diasEnMes(2, 2023));  // 28 (Febrero no bisiesto)
+
+    </script>
+
+    <script>
+        
+        function formatoLegible(fecha) {
+            let f1 = new Date (fecha);
+
+            let diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            
+            console.log (`${diasSemana[f1.getDay()]}, ${f1.getDate()} de ${meses[f1.getMonth()]} de ${f1.getFullYear()}`);
+        }
+        
+
+        let date = new Date ("2025-02-21");
+        formatoLegible(date);
+
+       
+    </script>
+    <script>
+        function tiempoDesde(fecha) {
+            let fInicio = new Date(fecha);
+            let fActual = new Date();
+            
+            let años = fActual.getFullYear() - fInicio.getFullYear();
+            let meses = fActual.getMonth() - fInicio.getMonth();
+            let dias = fActual.getDate() - fInicio.getDate();
+
+            if (dias < 0) {
+                meses--;  // Restamos un mes
+                dias += new Date(fActual.getFullYear(), fActual.getMonth(), 0).getDate();  // Días del mes anterior
+            }
+            if (meses < 0) {
+                años--;  // Restamos un año
+                meses += 12;  // Sumamos 12 meses
+            }
+
+            return `${años} años, ${meses} meses y ${dias} días`;
+        }
+
+        // 🔹 Pruebas
+        console.log(tiempoDesde("2000-01-01"));  // "25 años, 1 meses y 16 días" (Si hoy es 2025-02-17)
+        console.log(tiempoDesde("2010-06-25"));  // "14 años, 7 meses y X días"
+        console.log(tiempoDesde("2023-11-20"));  // "1 años, 2 meses y X días"
+
+    </script>
 </body>
 </html>

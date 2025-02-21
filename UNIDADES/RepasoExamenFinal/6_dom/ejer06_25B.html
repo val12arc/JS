@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 25</title>
+</head>
+<body>
+    <h1>Ejercicio 25</h1>
+    <br/>
+    <p>Esta versión dle ejercicio 25 muestra en un párrafo un contador. Cuando el contador llega a 10 (10 segundos) se produce el posicionamiento al final del documento.</p>
+    <p>Contador: <span id="conta" style="font-weight: 900; color: red;"></span></p>
+    <br/>
+    <script>
+
+
+        //Para no complicarme, puesto que necesito un documento HTML largo, 
+        //voy a crer un script que me añada numerosos párrafos.
+        let bd = document.getElementsByTagName("body")[0];
+        let nodo = null;
+        const nparrafos = 150;
+        for(let i = 0; i < nparrafos; i++){
+            nodo = document.createElement("p");
+            nodo.textContent = "Párrafo número " + (i + 1);
+            bd.appendChild(nodo);
+        }
+        //Llegados a este punto, ya tengoo un documento html largo.
+
+
+        //document.body.scrollHeight es una propiedad del DOM que devuelve la 
+        // altura total de la página web, incluyendo la parte que no es visible sin hacer scroll.
+        console.log(document.body.scrollHeight);
+        const nsegundos = 10;
+        let cont = 0;
+        let micronos = setInterval(
+            ()=>{
+                cont++;
+                document.getElementById("conta").textContent=cont;
+                if(cont==nsegundos){
+                    window.clearInterval(micronos); //Para el contador
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: "smooth" // Para un desplazamiento suavessssito
+                    });
+                }
+            }
+        ,1000);
+
+
+        //Nos posicionamos al principio del documento cada vez que refresquemos el documento
+        window.scrollTo(0,0);
+    </script>
+</body>
+</html>

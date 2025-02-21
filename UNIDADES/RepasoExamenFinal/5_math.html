@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcularHipotenusa(a, b) {
+            return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        }
+
+        // 🔹 Pruebas
+        console.log(calcularHipotenusa(3, 4));  // 5
+        console.log(calcularHipotenusa(6, 8));  // 10
+
+
+
+
+        function redondear(numero) {
+            return Math.round(numero);
+        }
+
+        // 🔹 Pruebas
+        console.log(redondear(4.3));  // 4
+        console.log(redondear(4.6));  // 5
+        console.log(redondear(5.5));  // 6
+
+
+        function numeroAleatorioEnRango(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // 🔹 Pruebas
+        console.log(numeroAleatorioEnRango(1, 10));  // Número entre 1 y 10
+        console.log(numeroAleatorioEnRango(20, 30));  // Número entre 20 y 30
+
+
+        function calcularAreaCirculo(radio) {
+            return Math.PI * Math.pow(radio, 2);
+        }
+
+        // 🔹 Pruebas
+        console.log(calcularAreaCirculo(3));  // 28.27
+        console.log(calcularAreaCirculo(5));  // 78.54
+
+        function convertirGradosARadianes(grados) {
+            return grados * (Math.PI / 180);
+        }
+
+        // 🔹 Pruebas
+        console.log(convertirGradosARadianes(180));  // 3.1416
+        console.log(convertirGradosARadianes(90));   // 1.5708
+
+
+        function encontrarMaximo(array) {
+            return Math.max(...array);
+        }
+
+        function encontrarMinimo(array) {
+            return Math.min(...array);
+        }
+
+        // 🔹 Pruebas
+        let numeros = [10, 20, 5, 30, 2];
+
+        console.log(encontrarMaximo(numeros));  // 30
+        console.log(encontrarMinimo(numeros));  // 2
+
+        function calcularLongitudCircunferencia(radio) {
+            return 2 * Math.PI * radio;
+        }
+
+        // 🔹 Pruebas
+        console.log(calcularLongitudCircunferencia(3));  // 18.85
+        console.log(calcularLongitudCircunferencia(5));  // 31.41
+
+
+        function aproximarExp(x) {
+            return Math.exp(x);
+        }
+
+        // 🔹 Pruebas
+        console.log(aproximarExp(1));  // 2.7182
+        console.log(aproximarExp(2));  // 7.389
+
+
+        function convertirRadianesAGrados(radianes) {
+            return radianes * (180 / Math.PI);
+        }
+
+        // 🔹 Pruebas
+        console.log(convertirRadianesAGrados(Math.PI));  // 180
+        console.log(convertirRadianesAGrados(Math.PI / 2));  // 90
+
+
+        function convertirRadianesAGrados(radianes) {
+            return radianes * (180 / Math.PI);
+        }
+
+        // 🔹 Pruebas
+        console.log(convertirRadianesAGrados(Math.PI));  // 180
+        console.log(convertirRadianesAGrados(Math.PI / 2));  // 90
+
+
+
+        function aleatorioTruncado() {
+            return Number(Math.random().toFixed(3));
+        }
+
+        // 🔹 Pruebas
+        console.log(aleatorioTruncado());  // Ejemplo: 0.123
+        console.log(aleatorioTruncado());  // Ejemplo: 0.456
+
+
+        function numeroImparAleatorio(min, max) {
+            let numero;
+            
+            do {
+                numero = Math.floor(Math.random() * (max - min + 1)) + min;
+            } while (numero % 2 === 0);  // Repetir si el número es par
+
+            return numero;
+        }
+
+        // 🔹 Pruebas
+        console.log(numeroImparAleatorio(1, 10));  // 1, 3, 5, 7 o 9
+        console.log(numeroImparAleatorio(15, 30));  // Número impar entre 15 y 30
+
+    </script>
+</body>
+</html>

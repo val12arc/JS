@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 26</title>
+</head>
+<body>
+    <h1>Ejercicio 26</h1>
+    <br/>
+    <p>Para no complicarnos, vamos a poner las palabras en minúsucla y sin acentos.</p>
+    <p>Para resolver cómodamente este ejercicio he utilizado la técnica "Divide y vencerás".</p>
+    <p>Parce una solución bastante larga, pero a veces merece la pena escribir más código si con eso nos aseguramos de que el algoritmo funcionará correctamente.</p>
+    <p>Lista de elementos</p>
+    <ul id="lista">
+        <li>pera</li>
+        <li>manzana</li>        
+        <li>melon</li>
+        <li>platano</li>
+        <li>sandia</li>
+        <li>mango</li>
+        <li>granada</li>
+        <li>uva</li>
+        <li>fresa</li>
+        <li>caki</li>
+    </ul>
+    <script>
+
+        //Esta función devuelve un array con los elemntos de la lista 
+        function creaArrayConDatos(){
+            const miArray = new Array();
+            let miLi = document.getElementsByTagName("li");
+            for(let i = 0; i < miLi.length; i++){
+                miArray[miArray.length] = miLi[i].textContent;
+            }
+            return miArray;
+        }
+
+        //Esta función elimina los elementos de la lista
+        function limpiaLista(){
+            const lista = document.getElementById("lista");
+            let totalHijos = lista.childElementCount;
+            for (let n = 0; n < totalHijos;n++)
+                lista.removeChild(lista.firstElementChild);
+        }
+
+        //Devuelve un array ordenado
+        function dameArrayOrdenador(entrada){
+            return entrada.sort();
+        }
+
+        //Genera un número aleatorio entre 0 y n
+        function dameAleatorio(n){
+            return Math.floor(Math.random() * n);
+        }
+
+        //Se le pasa como parámetro un array y devuelve otro nuevo array desordenado. 
+        function dameArrayKAOS(entrada){
+            let nElem = entrada.length;
+            let vueltas = nElem * 3; //Si hay 10 elementos, lo siguiente lo hará 30 veces
+            let aux = null;
+            let a = null;
+            let b = null;
+            for (let t = 0; t < vueltas; t++){
+                a = dameAleatorio(nElem);
+                b = dameAleatorio(nElem);
+
+                aux = entrada[a];
+                entrada[a] = entrada[b];
+                entrada[b] = aux;
+            }
+            return entrada;
+        }
+
+        //Añade li al ul lista cogiendo como datos lo contenido en un array
+        function creaLista(datos){
+            const lista = document.getElementById("lista");
+            let nElem = datos.length;
+            let nodo = null;
+            for(let i = 0; i < nElem; i++){
+                nodo = document.createElement("li");
+                nodo.textContent = datos[i];
+                lista.appendChild(nodo);
+
+            }
+
+        }
+
+
+        //Preguntamos lo que se quiere hacer
+        let resul = confirm("¿Deseas ordenar la lista (true) o desordenarla (false)?");
+        
+        //Creamos el array con los elentos de la lista
+        let arrayDatos = creaArrayConDatos();
+
+        //Borramos la lista parano duplicar li
+        limpiaLista();
+
+        let nuevaLista = null;
+        if(resul){
+            //Ordenamos lista
+            nuevaLista = dameArrayOrdenador(arrayDatos);
+        } else{
+            //Desordenamos lista
+            nuevaLista = dameArrayKAOS(arrayDatos);
+        }
+
+        //Creamos de nuevo la list con los elementos del array 
+        creaLista(nuevaLista);
+
+
+
+
+    </script>
+</body>
+</html>  
